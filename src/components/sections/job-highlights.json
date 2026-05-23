@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_job_highlights",
+  "info": {
+    "displayName": "job-highlights",
+    "icon": "chartPie"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "jobs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job-highlight.job-highlight"
+    }
+  },
+  "config": {}
+}

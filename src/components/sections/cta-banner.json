@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_cta_banners",
+  "info": {
+    "displayName": "CTA Banner",
+    "icon": "command"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "text"
+    },
+    "primary_button_text": {
+      "type": "string"
+    },
+    "primary_button_link": {
+      "type": "string"
+    },
+    "secondary_button_text": {
+      "type": "string"
+    },
+    "secondary_button_link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

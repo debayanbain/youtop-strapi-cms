@@ -1,24 +1,36 @@
 {
   "collectionName": "components_sections_heroes",
   "info": {
-    "displayName": "hero",
+    "displayName": "Hero",
     "icon": "house"
   },
   "options": {},
   "attributes": {
+    "badge_text": {
+      "type": "string"
+    },
     "heading": {
       "type": "string"
     },
+    "highlighted_text": {
+      "type": "string"
+    },
     "subheading": {
+      "type": "text"
+    },
+    "primary_button_text": {
       "type": "string"
     },
-    "button_text": {
+    "primary_button_link": {
       "type": "string"
     },
-    "button_link": {
+    "secondary_button_text": {
       "type": "string"
     },
-    "image": {
+    "secondary_button_link": {
+      "type": "string"
+    },
+    "hero_image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -27,6 +39,12 @@
         "videos",
         "audios"
       ]
+    },
+    "active_learners": {
+      "type": "biginteger"
+    },
+    "success_rate": {
+      "type": "biginteger"
     }
   },
   "config": {}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_highlights",
+  "info": {
+    "singularName": "job-highlight",
+    "pluralName": "job-highlights",
+    "displayName": "Job Highlights"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "badge_date": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    }
+  }
+}

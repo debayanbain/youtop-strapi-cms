@@ -11,17 +11,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "seo_title": {
       "type": "string"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
+    "seo_description": {
+      "type": "text"
     },
     "sections": {
       "type": "dynamiczone",
       "components": [
-        "sections.hero"
+        "sections.hero",
+        "sections.best-sellers",
+        "sections.latest-updates",
+        "sections.job-highlights",
+        "sections.cta-banner"
       ]
     }
   }
