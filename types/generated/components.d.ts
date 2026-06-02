@@ -40,6 +40,7 @@ export interface SectionsHero extends Struct.ComponentSchema {
   attributes: {
     active_learners: Schema.Attribute.BigInteger;
     badge_text: Schema.Attribute.String;
+    daily_lessons: Schema.Attribute.String;
     heading: Schema.Attribute.String;
     hero_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -84,6 +85,38 @@ export interface SectionsLatestUpdates extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBadge extends Struct.ComponentSchema {
+  collectionName: 'components_shared_badges';
+  info: {
+    displayName: 'Badge';
+    icon: 'manyToOne';
+  };
+  attributes: {
+    color: Schema.Attribute.Enumeration<
+      ['yellow', 'green', 'purple', 'red', 'blue']
+    >;
+    text: Schema.Attribute.String;
+    visible: Schema.Attribute.Boolean;
+  };
+}
+
+export interface SharedButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_buttons';
+  info: {
+    displayName: 'Button';
+    icon: 'cursor';
+  };
+  attributes: {
+    coming_soon: Schema.Attribute.Boolean;
+    is_external: Schema.Attribute.Boolean;
+    link: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+    variant: Schema.Attribute.Enumeration<
+      ['primary', 'secondary', 'outline', 'ghost']
+    >;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -92,6 +125,8 @@ declare module '@strapi/strapi' {
       'sections.hero': SectionsHero;
       'sections.job-highlights': SectionsJobHighlights;
       'sections.latest-updates': SectionsLatestUpdates;
+      'shared.badge': SharedBadge;
+      'shared.button': SharedButton;
     }
   }
 }

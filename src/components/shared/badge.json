@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_badges",
+  "info": {
+    "displayName": "Badge",
+    "icon": "manyToOne"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "yellow",
+        "green",
+        "purple",
+        "red",
+        "blue"
+      ]
+    },
+    "visible": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

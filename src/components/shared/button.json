@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_buttons",
+  "info": {
+    "displayName": "Button",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "outline",
+        "ghost"
+      ]
+    },
+    "is_external": {
+      "type": "boolean"
+    },
+    "coming_soon": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}
