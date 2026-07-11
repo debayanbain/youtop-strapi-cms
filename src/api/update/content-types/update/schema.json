@@ -12,10 +12,13 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 160
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "title"
     },
     "type": {
       "type": "enumeration",
@@ -24,16 +27,19 @@
         "job",
         "result",
         "scholarship"
-      ]
+      ],
+      "required": true
     },
     "excerpt": {
       "type": "text"
     },
     "publish_date": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "active": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     }
   }
 }

@@ -12,10 +12,14 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 120
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     },
     "type": {
       "type": "enumeration",
@@ -24,23 +28,46 @@
         "note",
         "course",
         "mocktest"
+      ],
+      "required": true
+    },
+    "class": {
+      "type": "integer",
+      "min": 5,
+      "max": 12
+    },
+    "subject": {
+      "type": "enumeration",
+      "enum": [
+        "Physics",
+        "Chemistry",
+        "Mathematics",
+        "Biology",
+        "Science",
+        "Social Science",
+        "History",
+        "Geography",
+        "English",
+        "Bengali",
+        "Hindi",
+        "Computer Science",
+        "All Subjects"
       ]
     },
     "thumbnail": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "short_description": {
       "type": "text"
     },
     "price": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "required": true
     },
     "old_price": {
       "type": "biginteger"
@@ -49,16 +76,20 @@
       "type": "string"
     },
     "badge": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 40
     },
     "is_best_seller": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "is_featured": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "active": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "sort_order": {
       "type": "biginteger"

@@ -440,6 +440,41 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGlobalSettingGlobalSetting extends Struct.SingleTypeSchema {
+  collectionName: 'global_settings';
+  info: {
+    displayName: 'Global Settings';
+    pluralName: 'global-settings';
+    singularName: 'global-setting';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    favicon: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::global-setting.global-setting'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    site_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    social_links: Schema.Attribute.Component<'shared.social-link', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
@@ -490,7 +525,7 @@ export interface ApiJobHighlightJobHighlight
     draftAndPublish: true;
   };
   attributes: {
-    active: Schema.Attribute.Boolean;
+    active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     badge_date: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -504,8 +539,127 @@ export interface ApiJobHighlightJobHighlight
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     short_description: Schema.Attribute.Text;
-    slug: Schema.Attribute.UID;
-    title: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiJobNewsJobNews extends Struct.CollectionTypeSchema {
+  collectionName: 'job_news_items';
+  info: {
+    displayName: 'Job News';
+    pluralName: 'job-news-items';
+    singularName: 'job-news';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    category: Schema.Attribute.Enumeration<
+      ['exam', 'job', 'result', 'notice']
+    > &
+      Schema.Attribute.DefaultTo<'job'>;
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::job-news.job-news'
+    > &
+      Schema.Attribute.Private;
+    published_date: Schema.Attribute.Date;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    source_link: Schema.Attribute.String;
+    source_meta: Schema.Attribute.Component<'shared.source-meta', false>;
+    summary: Schema.Attribute.Text;
+    thumbnail: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiJobResultJobResult extends Struct.CollectionTypeSchema {
+  collectionName: 'job_results';
+  info: {
+    displayName: 'Job Results';
+    pluralName: 'job-results';
+    singularName: 'job-result';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::job-result.job-result'
+    > &
+      Schema.Attribute.Private;
+    official_link: Schema.Attribute.String;
+    organization: Schema.Attribute.String;
+    post_name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    result_date: Schema.Attribute.Date;
+    result_pdf: Schema.Attribute.Media<'files' | 'images'>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    source_meta: Schema.Attribute.Component<'shared.source-meta', false>;
+    thumbnail: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
+  collectionName: 'navigations';
+  info: {
+    displayName: 'Navigation';
+    pluralName: 'navigations';
+    singularName: 'navigation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    footer_columns: Schema.Attribute.Component<'shared.footer-column', true>;
+    header_links: Schema.Attribute.Component<'shared.nav-link', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation.navigation'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -523,14 +677,26 @@ export interface ApiProductsProducts extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    active: Schema.Attribute.Boolean;
+    active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     author_name: Schema.Attribute.String;
-    badge: Schema.Attribute.String;
+    badge: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 40;
+      }>;
+    class: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 12;
+          min: 5;
+        },
+        number
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    is_best_seller: Schema.Attribute.Boolean;
-    is_featured: Schema.Attribute.Boolean;
+    is_best_seller: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    is_featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -538,14 +704,92 @@ export interface ApiProductsProducts extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     old_price: Schema.Attribute.BigInteger;
-    price: Schema.Attribute.BigInteger;
+    price: Schema.Attribute.BigInteger & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     short_description: Schema.Attribute.Text;
-    slug: Schema.Attribute.UID;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     sort_order: Schema.Attribute.BigInteger;
-    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<['ebook', 'note', 'course', 'mocktest']>;
+    subject: Schema.Attribute.Enumeration<
+      [
+        'Physics',
+        'Chemistry',
+        'Mathematics',
+        'Biology',
+        'Science',
+        'Social Science',
+        'History',
+        'Geography',
+        'English',
+        'Bengali',
+        'Hindi',
+        'Computer Science',
+        'All Subjects',
+      ]
+    >;
+    thumbnail: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
+    type: Schema.Attribute.Enumeration<
+      ['ebook', 'note', 'course', 'mocktest']
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiScholarshipScholarship extends Struct.CollectionTypeSchema {
+  collectionName: 'scholarships';
+  info: {
+    displayName: 'Scholarships';
+    pluralName: 'scholarships';
+    singularName: 'scholarship';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    amount: Schema.Attribute.String;
+    application_link: Schema.Attribute.String;
+    award_details: Schema.Attribute.Text;
+    benefits: Schema.Attribute.Text;
+    category: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    days_remaining: Schema.Attribute.Integer;
+    deadline: Schema.Attribute.Date;
+    description: Schema.Attribute.Text;
+    domain: Schema.Attribute.String;
+    eligibility: Schema.Attribute.Text;
+    eligibility_summary: Schema.Attribute.Text;
+    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::scholarship.scholarship'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
+    provider: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    source_meta: Schema.Attribute.Component<'shared.source-meta', false>;
+    state: Schema.Attribute.String;
+    status: Schema.Attribute.Enumeration<['Live', 'Upcoming', 'AlwaysOpen']> &
+      Schema.Attribute.DefaultTo<'Live'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    type: Schema.Attribute.Enumeration<['State', 'National', 'Private']> &
+      Schema.Attribute.DefaultTo<'National'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -563,7 +807,7 @@ export interface ApiUpdateUpdate extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    active: Schema.Attribute.Boolean;
+    active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -574,13 +818,18 @@ export interface ApiUpdateUpdate extends Struct.CollectionTypeSchema {
       'api::update.update'
     > &
       Schema.Attribute.Private;
-    publish_date: Schema.Attribute.Date;
+    publish_date: Schema.Attribute.Date & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID;
-    title: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     type: Schema.Attribute.Enumeration<
       ['exam', 'job', 'result', 'scholarship']
-    >;
+    > &
+      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1098,9 +1347,14 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::global-setting.global-setting': ApiGlobalSettingGlobalSetting;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::job-highlight.job-highlight': ApiJobHighlightJobHighlight;
+      'api::job-news.job-news': ApiJobNewsJobNews;
+      'api::job-result.job-result': ApiJobResultJobResult;
+      'api::navigation.navigation': ApiNavigationNavigation;
       'api::products.products': ApiProductsProducts;
+      'api::scholarship.scholarship': ApiScholarshipScholarship;
       'api::update.update': ApiUpdateUpdate;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

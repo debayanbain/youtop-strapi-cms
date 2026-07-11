@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_results",
+  "info": {
+    "singularName": "job-result",
+    "pluralName": "job-results",
+    "displayName": "Job Results"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "organization": {
+      "type": "string"
+    },
+    "post_name": {
+      "type": "string"
+    },
+    "result_date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    },
+    "official_link": {
+      "type": "string"
+    },
+    "result_pdf": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "source_meta": {
+      "type": "component",
+      "component": "shared.source-meta",
+      "repeatable": false
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_source_metas",
+  "info": {
+    "displayName": "SourceMeta",
+    "icon": "globe"
+  },
+  "options": {},
+  "attributes": {
+    "source_type": {
+      "type": "enumeration",
+      "enum": [
+        "manual",
+        "scraped"
+      ],
+      "default": "manual",
+      "required": true
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "source_name": {
+      "type": "string"
+    },
+    "scraped_at": {
+      "type": "datetime"
+    }
+  },
+  "config": {}
+}

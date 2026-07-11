@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_social_links",
+  "info": {
+    "displayName": "SocialLink",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "instagram",
+        "youtube",
+        "telegram",
+        "twitter",
+        "linkedin",
+        "discord",
+        "github"
+      ],
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "regex": "^https?://.+"
+    }
+  },
+  "config": {}
+}

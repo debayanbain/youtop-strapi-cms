@@ -1,0 +1,102 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scholarships",
+  "info": {
+    "singularName": "scholarship",
+    "pluralName": "scholarships",
+    "displayName": "Scholarships"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "provider": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "amount": {
+      "type": "string"
+    },
+    "award_details": {
+      "type": "text"
+    },
+    "eligibility_summary": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "deadline": {
+      "type": "date"
+    },
+    "days_remaining": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "State",
+        "National",
+        "Private"
+      ],
+      "default": "National"
+    },
+    "state": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Live",
+        "Upcoming",
+        "AlwaysOpen"
+      ],
+      "default": "Live"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "eligibility": {
+      "type": "text"
+    },
+    "benefits": {
+      "type": "text"
+    },
+    "application_link": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "source_meta": {
+      "type": "component",
+      "component": "shared.source-meta",
+      "repeatable": false
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

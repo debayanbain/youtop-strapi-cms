@@ -10,7 +10,8 @@
       "type": "string"
     },
     "heading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "highlighted_text": {
       "type": "string"
@@ -34,10 +35,7 @@
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "active_learners": {

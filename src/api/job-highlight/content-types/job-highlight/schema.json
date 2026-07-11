@@ -12,10 +12,13 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 160
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "title"
     },
     "short_description": {
       "type": "text"
@@ -27,7 +30,8 @@
       "type": "string"
     },
     "active": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     }
   }
 }

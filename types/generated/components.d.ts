@@ -41,10 +41,8 @@ export interface SectionsHero extends Struct.ComponentSchema {
     active_learners: Schema.Attribute.BigInteger;
     badge_text: Schema.Attribute.String;
     daily_lessons: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    hero_image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    hero_image: Schema.Attribute.Media<'images'>;
     highlighted_text: Schema.Attribute.String;
     primary_button_link: Schema.Attribute.String;
     primary_button_text: Schema.Attribute.String;
@@ -117,6 +115,78 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFooterColumn extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footer_columns';
+  info: {
+    displayName: 'FooterColumn';
+    icon: 'bulletList';
+  };
+  attributes: {
+    links: Schema.Attribute.Component<'shared.nav-link', true>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 40;
+      }>;
+  };
+}
+
+export interface SharedNavLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_nav_links';
+  info: {
+    displayName: 'NavLink';
+    icon: 'link';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 40;
+      }>;
+  };
+}
+
+export interface SharedSocialLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_social_links';
+  info: {
+    displayName: 'SocialLink';
+    icon: 'cursor';
+  };
+  attributes: {
+    platform: Schema.Attribute.Enumeration<
+      [
+        'facebook',
+        'instagram',
+        'youtube',
+        'telegram',
+        'twitter',
+        'linkedin',
+        'discord',
+        'github',
+      ]
+    > &
+      Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedSourceMeta extends Struct.ComponentSchema {
+  collectionName: 'components_shared_source_metas';
+  info: {
+    displayName: 'SourceMeta';
+    icon: 'globe';
+  };
+  attributes: {
+    scraped_at: Schema.Attribute.DateTime;
+    source_name: Schema.Attribute.String;
+    source_type: Schema.Attribute.Enumeration<['manual', 'scraped']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'manual'>;
+    source_url: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -127,6 +197,10 @@ declare module '@strapi/strapi' {
       'sections.latest-updates': SectionsLatestUpdates;
       'shared.badge': SharedBadge;
       'shared.button': SharedButton;
+      'shared.footer-column': SharedFooterColumn;
+      'shared.nav-link': SharedNavLink;
+      'shared.social-link': SharedSocialLink;
+      'shared.source-meta': SharedSourceMeta;
     }
   }
 }
