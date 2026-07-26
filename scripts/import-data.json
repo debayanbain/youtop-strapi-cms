@@ -1,0 +1,264 @@
+{
+  "globalSetting": {
+    "site_name": "YouTOP Academy",
+    "social_links": []
+  },
+
+  "navigation": {
+    "header_links": [
+      { "label": "Home", "href": "/" },
+      { "label": "E-Books", "href": "/ebooks" },
+      { "label": "Notes", "href": "/notes" },
+      { "label": "Job Results", "href": "/results" },
+      { "label": "Scholarships", "href": "/scholarships" },
+      { "label": "Job News", "href": "/news" }
+    ],
+    "footer_columns": [
+      {
+        "title": "Exams",
+        "links": [
+          { "label": "Madhyamik", "href": "/madhyamik" },
+          { "label": "HS", "href": "/hs" },
+          { "label": "Suggestions", "href": "/madhyamik-suggestion" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "label": "E-Books", "href": "/ebooks" },
+          { "label": "Results", "href": "/results" },
+          { "label": "News", "href": "/news" }
+        ]
+      },
+      {
+        "title": "Scholarships",
+        "links": [
+          { "label": "SVMCM", "href": "/scholarships/svmcm" },
+          { "label": "OASIS", "href": "/scholarships/oasis" },
+          { "label": "Nabanna", "href": "/scholarships/nabanna" }
+        ]
+      }
+    ]
+  },
+
+  "jobNews": [
+    {
+      "title": "Madhyamik 2026 Exam Schedule Released by WBBSE",
+      "slug": "madhyamik-2026-exam-schedule",
+      "published_date": "2026-02-10",
+      "category": "exam",
+      "source_meta": { "source_type": "manual", "source_name": "WBBSE" },
+      "active": true
+    },
+    {
+      "title": "WB Govt Announces 5,000 New Teaching Positions",
+      "slug": "wb-govt-5000-teaching-positions",
+      "published_date": "2026-02-08",
+      "category": "job",
+      "source_meta": { "source_type": "manual", "source_name": "Govt. of West Bengal" },
+      "active": true
+    },
+    {
+      "title": "HS 2025 Final Results Published — Check Now",
+      "slug": "hs-2025-final-results",
+      "published_date": "2026-02-05",
+      "category": "result",
+      "source_meta": { "source_type": "manual", "source_name": "WBCHSE" },
+      "active": true
+    },
+    {
+      "title": "SVMCM Scholarship Application Deadline Extended",
+      "slug": "svmcm-deadline-extended",
+      "published_date": "2026-02-03",
+      "category": "notice",
+      "source_meta": { "source_type": "manual", "source_name": "WB Higher Education Dept" },
+      "active": true
+    }
+  ],
+
+  "scholarships": [
+    {
+      "title": "INSPIRE Scholarship for Higher Education (SHE)",
+      "slug": "inspire-scholarship-he-2026",
+      "description": "Scholarship for students pursuing Bachelor and Masters level courses in Natural and Basic Sciences.",
+      "provider": "DST, Government of India",
+      "amount": "₹80,000 per annum",
+      "award_details": "Provides ₹60,000 cash scholarship and ₹20,000 summer mentorship grant.",
+      "eligibility_summary": "Top 1% in Class 12th Board Exam, pursuing Natural/Basic Sciences.",
+      "deadline": "2026-12-31",
+      "days_remaining": 310,
+      "type": "National",
+      "category": "Indian",
+      "status": "Live",
+      "eligibility": "• Top 1% in Class 12th Board Exam\n• Pursuing courses in Natural and Basic Sciences\n• Age between 17-22 years",
+      "benefits": "• ₹60,000 cash scholarship\n• ₹20,000 summer mentorship grant",
+      "application_link": "https://online-inspire.gov.in/",
+      "featured": true,
+      "source_meta": { "source_type": "manual", "source_name": "DST, Government of India" },
+      "active": true
+    },
+    {
+      "title": "Prime Minister's Scholarship Scheme (PMSS)",
+      "slug": "pm-modi-scholarship-scheme-2026",
+      "description": "Scholarship for wards and widows of deceased/ex-service personnel of Armed Forces.",
+      "provider": "Kendriya Sainik Board",
+      "amount": "₹2,500 - ₹3,000 per month",
+      "award_details": "Monthly stipend of ₹3,000 for girls and ₹2,500 for boys.",
+      "eligibility_summary": "Wards of Ex-Servicemen with min 60% in Class 12.",
+      "deadline": "2026-03-15",
+      "days_remaining": 19,
+      "type": "National",
+      "category": "Indian",
+      "status": "Live",
+      "eligibility": "• Wards of Ex-Servicemen\n• Minimum 60% in Class 12 or Equivalent\n• Pursuing first professional degree (BE, B.Tech, MBBS, etc.)",
+      "benefits": "• ₹3,000 for girls\n• ₹2,500 for boys",
+      "application_link": "https://ksb.gov.in/",
+      "featured": false,
+      "source_meta": { "source_type": "manual", "source_name": "Kendriya Sainik Board" },
+      "active": true
+    },
+    {
+      "title": "Generation Google Scholarship (APAC)",
+      "slug": "google-generation-scholarship-2026",
+      "description": "Scholarship for women in computer science to help excel in technology and become leaders in the field.",
+      "provider": "Google",
+      "amount": "$1,000 (Approx. ₹83,000)",
+      "award_details": "A one-time award of $1,000 for the academic year.",
+      "eligibility_summary": "Women students in CS or related technical fields across APAC.",
+      "deadline": "2026-05-15",
+      "days_remaining": 80,
+      "type": "Private",
+      "category": "Domain-Specific",
+      "status": "Upcoming",
+      "domain": "Computer Science",
+      "eligibility": "• Currently enrolled in a university\n• Studying Computer Science or related technical field\n• Academic excellence and leadership potential",
+      "benefits": "• One-time financial award\n• Google mentorship opportunities",
+      "application_link": "https://buildyourfuture.withgoogle.com/scholarships/generation-google-scholarship-apac",
+      "featured": true,
+      "source_meta": { "source_type": "manual", "source_name": "Google" },
+      "active": true
+    },
+    {
+      "title": "Tata Scholarship at Cornell University",
+      "slug": "tata-scholarship-cornell-2026",
+      "description": "Full scholarship for Indian citizens to pursue undergraduate studies at Cornell University.",
+      "provider": "Tata Trust",
+      "amount": "Full Tuition Fee",
+      "award_details": "Covers full tuition fees and potentially living expenses.",
+      "eligibility_summary": "Indian citizens admitted to Cornell for undergraduate programs.",
+      "deadline": "2026-01-02",
+      "type": "Private",
+      "category": "International",
+      "status": "AlwaysOpen",
+      "eligibility": "• Indian citizen\n• Admitted to Cornell University as an undergraduate\n• Demonstrate financial need",
+      "benefits": "• Full tuition fees\n• Living expenses (in cases of extreme need)",
+      "application_link": "https://admissions.cornell.edu/apply/international-students/tata-scholarship",
+      "featured": false,
+      "source_meta": { "source_type": "manual", "source_name": "Tata Trust" },
+      "active": true
+    },
+    {
+      "title": "Adobe India Women-in-Technology Scholarship",
+      "slug": "adobe-india-women-in-tech-2026",
+      "description": "Scholarship for women students in India to support their education and careers in technology.",
+      "provider": "Adobe India",
+      "amount": "Tuition + Internship",
+      "award_details": "Full tuition fee for one year and a paid internship opportunity.",
+      "eligibility_summary": "Female students in CS/IT courses with strong academic record.",
+      "deadline": "2026-09-30",
+      "days_remaining": 210,
+      "type": "Private",
+      "category": "Domain-Specific",
+      "status": "Live",
+      "domain": "Technology",
+      "eligibility": "• Female student enrolled in an Indian university\n• Studying CS or Engineering\n• Academic performance and technical skills",
+      "benefits": "• Internship at Adobe India\n• Tuition fee coverage for one year",
+      "application_link": "https://www.adobe.com/in/ideas/adobe-india-women-in-technology-scholarship.html",
+      "featured": false,
+      "source_meta": { "source_type": "manual", "source_name": "Adobe India" },
+      "active": true
+    },
+    {
+      "title": "Swami Vivekananda Merit-cum-Means (SVMCM)",
+      "slug": "swami-vivekananda-merit-cum-means-2026",
+      "description": "Scholarship for meritorious students of West Bengal belonging to economically backward families.",
+      "provider": "Govt. of West Bengal",
+      "amount": "Up to ₹60,000 per year",
+      "award_details": "Monthly stipend of ₹1,000 to ₹5,000 based on the course.",
+      "eligibility_summary": "WB residents with 60% in last exam and income < 2.5L.",
+      "deadline": "2026-02-28",
+      "days_remaining": 4,
+      "type": "State",
+      "state": "West Bengal",
+      "category": "Indian",
+      "status": "Live",
+      "eligibility": "• Resident of West Bengal\n• Minimum 60% in last qualifying exam\n• Family income less than ₹2.5 Lakh per annum",
+      "benefits": "• Monthly stipend based on course\n• Financial support for higher education",
+      "application_link": "https://svmcm.wbhed.gov.in/",
+      "featured": false,
+      "source_meta": { "source_type": "manual", "source_name": "Govt. of West Bengal" },
+      "active": true
+    },
+    {
+      "title": "Oasis Scholarship (Pre-Matric & Post-Matric)",
+      "slug": "oasis-scholarship-west-bengal-2026",
+      "description": "Scholarship portal for students belonging to SC/ST/OBC categories in West Bengal.",
+      "provider": "Govt. of West Bengal",
+      "amount": "Variable Stipend",
+      "award_details": "Maintenance allowance and fee reimbursement for SC/ST students.",
+      "eligibility_summary": "SC/ST/OBC students of WB with valid certificates.",
+      "deadline": "2026-03-31",
+      "days_remaining": 35,
+      "type": "State",
+      "state": "West Bengal",
+      "category": "Indian",
+      "status": "Live",
+      "eligibility": "• Resident of West Bengal\n• Belonging to SC/ST/OBC category\n• Income limit as per category norms",
+      "benefits": "• Hostel and maintenance allowance\n• Tuition fee support",
+      "application_link": "https://oasis.gov.in/",
+      "featured": false,
+      "source_meta": { "source_type": "manual", "source_name": "Govt. of West Bengal" },
+      "active": true
+    },
+    {
+      "title": "National Means-cum-Merit Scholarship (NMMS)",
+      "slug": "national-means-cum-merit-2026",
+      "description": "Centrally sponsored scheme for meritorious students of economically weaker sections.",
+      "provider": "Ministry of Education",
+      "amount": "₹12,000 per annum",
+      "award_details": "Financial assistance from Class 9 to 12.",
+      "eligibility_summary": "Class 8 students with min 55% and income < 3.5L.",
+      "deadline": "2026-04-15",
+      "days_remaining": 50,
+      "type": "National",
+      "category": "Indian",
+      "status": "Live",
+      "eligibility": "• Studying in Class 8\n• Score at least 55% in Class 7\n• Family income not exceeding ₹3,50,000",
+      "benefits": "• Yearly stipend of ₹12,000",
+      "application_link": "https://scholarships.gov.in/",
+      "featured": false,
+      "source_meta": { "source_type": "manual", "source_name": "Ministry of Education" },
+      "active": true
+    },
+    {
+      "title": "HCL TechBee Early Career Program",
+      "slug": "hcl-tech-bee-scholarship-2026",
+      "description": "Work-integrated learning program for Class 12th students with financial support.",
+      "provider": "HCL Technologies",
+      "amount": "Stipend + Fully Funded Degree",
+      "award_details": "Stipend during training and funding for higher education.",
+      "eligibility_summary": "Class 12 students with strong STEM background.",
+      "deadline": "2026-06-30",
+      "days_remaining": 120,
+      "type": "Private",
+      "category": "Domain-Specific",
+      "status": "Live",
+      "eligibility": "• Class 12 students\n• Minimum percentage as per regional board norms\n• Indian citizen",
+      "benefits": "• Monthly stipend\n• Assured job at HCL after training\n• Support for further education (B.Sc/B.Tech)",
+      "application_link": "https://www.hcltech.com/techbee",
+      "featured": false,
+      "source_meta": { "source_type": "manual", "source_name": "HCL Technologies" },
+      "active": true
+    }
+  ]
+}

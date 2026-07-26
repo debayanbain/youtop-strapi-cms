@@ -83,7 +83,7 @@
       "type": "text"
     },
     "application_link": {
-      "type": "string"
+      "type": "text"
     },
     "featured": {
       "type": "boolean",

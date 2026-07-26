@@ -34,7 +34,7 @@
       "type": "text"
     },
     "official_link": {
-      "type": "string"
+      "type": "text"
     },
     "result_pdf": {
       "type": "media",

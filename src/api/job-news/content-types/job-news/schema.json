@@ -31,7 +31,7 @@
       "type": "date"
     },
     "source_link": {
-      "type": "string"
+      "type": "text"
     },
     "category": {
       "type": "enumeration",
@@ -54,6 +54,43 @@
       "type": "component",
       "component": "shared.source-meta",
       "repeatable": false
+    },
+    "is_posting": {
+      "type": "boolean",
+      "default": false
+    },
+    "organization": {
+      "type": "string"
+    },
+    "vacancies": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "text"
+    },
+    "eligibility": {
+      "type": "text"
+    },
+    "age_limit": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "string"
+    },
+    "application_fee": {
+      "type": "string"
+    },
+    "last_date": {
+      "type": "date"
+    },
+    "apply_link": {
+      "type": "text"
+    },
+    "notification_link": {
+      "type": "text"
+    },
+    "official_website": {
+      "type": "text"
     },
     "active": {
       "type": "boolean",

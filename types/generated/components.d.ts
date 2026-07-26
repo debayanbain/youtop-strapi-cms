@@ -183,7 +183,7 @@ export interface SharedSourceMeta extends Struct.ComponentSchema {
     source_type: Schema.Attribute.Enumeration<['manual', 'scraped']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'manual'>;
-    source_url: Schema.Attribute.String;
+    source_url: Schema.Attribute.Text;
   };
 }
 

@@ -16,7 +16,7 @@
       "required": true
     },
     "source_url": {
-      "type": "string"
+      "type": "text"
     },
     "source_name": {
       "type": "string"

@@ -11,6 +11,9 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi",
+    "import": "node scripts/strapi-bulk-import.mjs",
+    "import:dry": "node scripts/strapi-bulk-import.mjs --dry-run",
+    "import:update": "node scripts/strapi-bulk-import.mjs --update",
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },

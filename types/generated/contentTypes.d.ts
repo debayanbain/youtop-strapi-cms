@@ -563,6 +563,9 @@ export interface ApiJobNewsJobNews extends Struct.CollectionTypeSchema {
   };
   attributes: {
     active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    age_limit: Schema.Attribute.String;
+    application_fee: Schema.Attribute.String;
+    apply_link: Schema.Attribute.Text;
     category: Schema.Attribute.Enumeration<
       ['exam', 'job', 'result', 'notice']
     > &
@@ -571,16 +574,24 @@ export interface ApiJobNewsJobNews extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    eligibility: Schema.Attribute.Text;
+    is_posting: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    last_date: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::job-news.job-news'
     > &
       Schema.Attribute.Private;
+    notification_link: Schema.Attribute.Text;
+    official_website: Schema.Attribute.Text;
+    organization: Schema.Attribute.String;
     published_date: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
+    qualification: Schema.Attribute.Text;
+    salary: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    source_link: Schema.Attribute.String;
+    source_link: Schema.Attribute.Text;
     source_meta: Schema.Attribute.Component<'shared.source-meta', false>;
     summary: Schema.Attribute.Text;
     thumbnail: Schema.Attribute.Media<'images'>;
@@ -592,6 +603,7 @@ export interface ApiJobNewsJobNews extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    vacancies: Schema.Attribute.String;
   };
 }
 
@@ -617,7 +629,7 @@ export interface ApiJobResultJobResult extends Struct.CollectionTypeSchema {
       'api::job-result.job-result'
     > &
       Schema.Attribute.Private;
-    official_link: Schema.Attribute.String;
+    official_link: Schema.Attribute.Text;
     organization: Schema.Attribute.String;
     post_name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
@@ -755,7 +767,7 @@ export interface ApiScholarshipScholarship extends Struct.CollectionTypeSchema {
   attributes: {
     active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     amount: Schema.Attribute.String;
-    application_link: Schema.Attribute.String;
+    application_link: Schema.Attribute.Text;
     award_details: Schema.Attribute.Text;
     benefits: Schema.Attribute.Text;
     category: Schema.Attribute.String;
