@@ -56,6 +56,29 @@
       "component": "shared.source-meta",
       "repeatable": false
     },
+    "kind": {
+      "type": "enumeration",
+      "enum": [
+        "result",
+        "final-result",
+        "admit-card",
+        "answer-key",
+        "merit-list",
+        "counseling",
+        "cutoff",
+        "notification"
+      ],
+      "default": "result"
+    },
+    "tags": {
+      "type": "text"
+    },
+    "seo_description": {
+      "type": "text"
+    },
+    "seo_keywords": {
+      "type": "text"
+    },
     "active": {
       "type": "boolean",
       "default": true

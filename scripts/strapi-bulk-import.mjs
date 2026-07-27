@@ -1,27 +1,3 @@
-#!/usr/bin/env node
-/**
- * Bulk-import content into Strapi 5 via the REST API.
- *
- * Usage:
- *   STRAPI_URL=http://localhost:4040 STRAPI_API_TOKEN=xxxx \
- *     node scripts/strapi-bulk-import.mjs [dataFile] [--update] [--dry-run]
- *
- *   # or drop a .env next to this repo with STRAPI_URL / STRAPI_API_TOKEN
- *   node scripts/strapi-bulk-import.mjs scripts/import-data.json
- *
- * Flags:
- *   --update    for collection rows, PUT over an existing entry matched by slug
- *               (default: skip rows whose slug already exists — safe re-runs)
- *   --dry-run   print what would happen, send nothing
- *
- * Notes:
- *   - POST auto-publishes in this Strapi 5.46 setup (publishedAt is set on create).
- *   - The API token must have create/update permission (use a Full Access token).
- *   - Media: give any media field the shape { "__file": "./media/logo.png" }
- *     (path relative to the data file). The script uploads it first, then
- *     references the returned file id. Uploads are de-duplicated per run.
- */
-
 import { readFileSync, existsSync } from 'node:fs';
 import { basename, dirname, resolve } from 'node:path';
 import { openAsBlob } from 'node:fs';

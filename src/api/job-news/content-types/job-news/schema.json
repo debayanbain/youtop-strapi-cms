@@ -92,6 +92,15 @@
     "official_website": {
       "type": "text"
     },
+    "tags": {
+      "type": "text"
+    },
+    "seo_description": {
+      "type": "text"
+    },
+    "seo_keywords": {
+      "type": "text"
+    },
     "active": {
       "type": "boolean",
       "default": true

@@ -590,10 +590,13 @@ export interface ApiJobNewsJobNews extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     qualification: Schema.Attribute.Text;
     salary: Schema.Attribute.String;
+    seo_description: Schema.Attribute.Text;
+    seo_keywords: Schema.Attribute.Text;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     source_link: Schema.Attribute.Text;
     source_meta: Schema.Attribute.Component<'shared.source-meta', false>;
     summary: Schema.Attribute.Text;
+    tags: Schema.Attribute.Text;
     thumbnail: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -623,6 +626,19 @@ export interface ApiJobResultJobResult extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    kind: Schema.Attribute.Enumeration<
+      [
+        'result',
+        'final-result',
+        'admit-card',
+        'answer-key',
+        'merit-list',
+        'counseling',
+        'cutoff',
+        'notification',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'result'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -635,8 +651,11 @@ export interface ApiJobResultJobResult extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     result_date: Schema.Attribute.Date;
     result_pdf: Schema.Attribute.Media<'files' | 'images'>;
+    seo_description: Schema.Attribute.Text;
+    seo_keywords: Schema.Attribute.Text;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     source_meta: Schema.Attribute.Component<'shared.source-meta', false>;
+    tags: Schema.Attribute.Text;
     thumbnail: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
